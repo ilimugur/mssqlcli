@@ -87,7 +87,6 @@ access them with the CLI client. Personally, I store my queries in
 
 
 Run Query and return results as a json blob
-
 ```bash
 mssqlcli query {path to query}.sql
 ```
@@ -106,6 +105,19 @@ Run query and return results as a nicely formatted table
 ```bash
 mssqlcli query -o pretty {path to query}.sql
 ```
+
+Send a template query to the server in file {path to query}.sql.
+```bash
+mssqlcli template_query -v 'last_name: Ugur' {path to query}.sql
+```
+
+### Template Queries
+An example of a templated SQL query is also given below. These are
+the kind of queries that can be used alongside template_query command.
+```bash
+SELECT * FROM bogus_db.users WHERE last_name = "{{ last_name }}";
+```
+
 
 [1]: http://www.freetds.org/
 [2]: http://pymssql.org/en/stable/

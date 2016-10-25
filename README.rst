@@ -116,6 +116,22 @@ Run query and return results as a nicely formatted table
 
     mssqlcli query -o pretty {path to query}.sql
 
+Send a template query to the server in file {path to query}.sql.
+
+.. code:: bash
+
+    mssqlcli template_query -v 'last_name: Ugur' {path to query}.sql
+
+Template Queries
+----------------
+
+An example of a templated SQL query is also given below. These are
+the kind of queries that can be used alongside template_query command.
+
+.. code:: bash
+
+    SELECT * FROM bogus_db.users WHERE last_name = "{{ last_name }}";
+
 .. |PyPI| image:: https://img.shields.io/pypi/v/mssqlcli.svg
    :target: https://pypi.python.org/pypi/mssqlcli
 .. |Build Status| image:: https://img.shields.io/travis/rtrox/mssqlcli/master.svg

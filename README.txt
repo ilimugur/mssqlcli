@@ -92,6 +92,16 @@ mssqlcli query -o csv {path to query}.sql
 Redirect csv to File
 mssqlcli query -o csv {path to query}.sql > results.csv
 
+Send a template query to the server in file {path to query}.sql.
+mssqlcli template_query -v 'last_name: Ugur' {path to query}.sql
+
+Template Queries
+----------------
+
+An example of a templated SQL query is also given below. These are
+the kind of queries that can be used alongside template_query command.
+SELECT * FROM bogus_db.users WHERE last_name = "{{ last_name }}";
+
 [1]: http://www.freetds.org/
 [2]: http://pymssql.org/en/stable/
 [3]: http://click.pocoo.org/5/
