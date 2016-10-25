@@ -54,6 +54,9 @@ domain: MY_DOMAIN
 ~ [ mssqlcli --help Usage: mssqlcli [OPTIONS] COMMAND [ARGS]...
 
 Options:
+  -o, --output [json|csv|pretty]
+  -c, --config-file PATH   Config File for use with client. (default:
+                           ~/.config/pymssql.yml)
   --help  Show this message and exit.
 
 Commands:
@@ -62,9 +65,6 @@ Commands:
 Usage: mssqlcli query [OPTIONS] QUERY
 
 Options:
-  -o, --output [json|csv|pretty]
-  -c, --config-file PATH   Config File for use with client. (default:
-                           ~/.config/pymssql.yml)
   --help                   Show this message and exit.
 ```
 
