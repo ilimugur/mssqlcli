@@ -54,18 +54,29 @@ domain: MY_DOMAIN
 ~ [ mssqlcli --help Usage: mssqlcli [OPTIONS] COMMAND [ARGS]...
 
 Options:
+  --version  Show the version and exit.
+  -c, --config-file PATH   Override default config file location
+                           (default: ~/.config/pymssql.yml).
   -o, --output [json|csv|pretty]
-  -c, --config-file PATH   Config File for use with client. (default:
-                           ~/.config/pymssql.yml)
   --help  Show this message and exit.
 
 Commands:
-  query
+  query           Run a query against an MS-SQL Database.
+  template_query
+
 ~ [ mssqlcli query --help
 Usage: mssqlcli query [OPTIONS] QUERY
 
 Options:
   --help                   Show this message and exit.
+
+~ [ mssqlcli template_query --help
+Usage: mssqlcli template_query [OPTIONS] QUERY
+
+Options:
+  -v, --variable TEXT   Variable for substitution in template. ex:"-v
+                        first_name:russell" to replace {{ first_name }}
+  --help                Show this message and exit.
 ```
 
 
